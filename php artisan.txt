@@ -1,8 +1,0 @@
-php artisan migrate:rollback -> elimina la tabla del ultimo lote, el lote se puede ver select * from migrations
-php artisan migrate:refresh .> elimina todas las tablas y lo vuelve a crear
-
-
-php artisan migrate:reset -> Borrar todas las ejecuciones de las migraciones, no crea las tablas solo las elimina
-
-
-php artisan make:migration add_columns_to_mytable_table-> Adicionar columna
