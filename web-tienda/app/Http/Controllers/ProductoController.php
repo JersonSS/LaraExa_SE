@@ -56,5 +56,16 @@ class ProductoController extends Controller
         return redirect('/productos');
      }
 
+     //BORRAR GET
+     public function delete(Producto $producto) {
+        return view('productos.delete',compact('producto'));
+     }
+
+     //BORRAR POST
+     public function destroy(Producto $producto)
+     {
+        $producto->delete();
+        return redirect('/productos');
+     }
 
 }

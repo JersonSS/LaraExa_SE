@@ -31,6 +31,7 @@
                         <td>{{ $producto->stock }}</td>
                         <td>
                             <a href="{{ route('productos.edit',$producto) }}">Editar</a>
+                            <a href="{{ route('productos.delete',$producto) }}">Eliminar</a>
                         </td>
                     </tr>
                 @endforeach
