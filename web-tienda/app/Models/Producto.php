@@ -12,4 +12,16 @@ class Producto extends Model
     protected $table="productos";
     protected $primaryKey="producto_id";
     public $timestamps=false;
+
+    //guardar por asignacion masiva
+    /*protected $fillable=[
+        'nombre',
+        'marca',
+        'precio',
+        'fvencimiento',
+        'stock'
+    ];*/
+
+    //guardar por asignacion masiva - simple
+    protected $guarded=[];
 }

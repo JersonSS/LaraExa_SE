@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
+
     //LISTAR GET
     public function index()
     {
@@ -14,7 +15,9 @@ class ProductoController extends Controller
         return view('productos.index',compact('baraja'));
     }
 
+     /***************************** REGISTRAR ******************************* */
     //REGISTRAR GET
+    //Mandar la vista o el formulario para que sea llenado
     public function create()
     {
         return view('productos.create');
@@ -23,6 +26,16 @@ class ProductoController extends Controller
     //REGISTRAR POST
     public function store(Request $request)
     {
+        //VALIDACION
+        $request->validate([
+            'nombre'=> 'required',
+            'marca'=> 'required',
+            'precio'=> 'required',
+            'fvencimiento'=> 'required',
+            'stock'=> 'required'
+        ]);
+
+        /*
         $producto = new Producto();
 
         $producto->nombre=$request->nombre;
@@ -32,29 +45,45 @@ class ProductoController extends Controller
         $producto->stock=$request->stock;
 
         $producto->save();
+        */
 
+        Producto::create($request->all());
         return redirect('/productos');
     }
 
+
+    /***************************** EDITAR ******************************* */
     //EDITAR GET
     public function edit(Producto $producto)
     {
         return view('productos.edit',compact('producto'));
     }
 
-     //EDITAR GET
+     //EDITAR POST
      public function update(Producto $producto ,Request $request)
      {
 
-        $producto->nombre=$request->nombre;
+         //VALIDACION
+         $request->validate([
+            'nombre'=> 'required',
+            'marca'=> 'required',
+            'precio'=> 'required',
+            'fvencimiento'=> 'required',
+            'stock'=> 'required'
+        ]);
+       /* $producto->nombre=$request->nombre;
         $producto->marca=$request->marca;
         $producto->precio=$request->precio;
         $producto->fvencimiento=$request->fvencimiento;
         $producto->stock=$request->stock;
 
-        $producto->save();
+        $producto->save();*/
+        $producto->update($request->all());
         return redirect('/productos');
      }
+
+
+     /***************************** ELIMINAR ******************************* */
 
      //BORRAR GET
      public function delete(Producto $producto) {
