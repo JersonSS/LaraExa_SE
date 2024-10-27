@@ -19,19 +19,25 @@
                     <td><b>Precio</b></td>
                     <td><b>F.Vencimiento</b></td>
                     <td><b>Stock</b></td>
+                    <td><b>Acción</b></td>
                 </tr>
-                @foreach($baraja as $carta)
+                @foreach($baraja as $producto)
                     <tr>
-                        <td>{{ $carta->producto_id }}</td>
-                        <td>{{ $carta->nombre }}</td>
-                        <td>{{ $carta->marca }}</td>
-                        <td>{{ $carta->precio }}</td>
-                        <td>{{ $carta->fvencimiento }}</td>
-                        <td>{{ $carta->stock }}</td>
+                        <td>{{ $producto->producto_id }}</td>
+                        <td>{{ $producto->nombre }}</td>
+                        <td>{{ $producto->marca }}</td>
+                        <td>{{ $producto->precio }}</td>
+                        <td>{{ $producto->fvencimiento }}</td>
+                        <td>{{ $producto->stock }}</td>
+                        <td>
+                            <a href="{{ route('productos.edit',$producto) }}">Editar</a>
+                        </td>
                     </tr>
                 @endforeach
             </tr>
-        </table>
+        </table><br>
+
+    <a href="{{ url('/productos/create') }}">Registrar Producto</a>
     </div>
 </body>
 </html>
