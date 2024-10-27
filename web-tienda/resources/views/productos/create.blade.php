@@ -10,7 +10,7 @@
         <h3>¡Productos - Registrar!</h3>
 
         <form action="{{ route('productos.store') }}" method="POST">
-            @csrf {{-- para proteger el formularo de registro --}}
+            @csrf {{-- para proteger el formularo de registro de ataques maliciosos --}}
             Nombre: <input type="text" name="nombre"/><br>
             Marca: <input type="text" name="marca"/> <br>
             Precio: <input type="number" name="precio" step="any"/> <br>

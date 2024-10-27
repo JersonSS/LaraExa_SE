@@ -13,4 +13,4 @@ Route::get('/productos/create',[ProductoController::class,'create']);
 Route::post('/productos',[ProductoController::class,'store'])->name('productos.store');
 
 Route::get('/productos/{producto}/edit',[ProductoController::class,'edit'])->name('productos.edit');
-Route::get('/productos/{producto}',[ProductoController::class,'update'])->name('productos.update');
+Route::put('/productos/{producto}',[ProductoController::class,'update'])->name('productos.update');
