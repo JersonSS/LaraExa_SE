@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CreateProductoRequest;
+
 class ProductoController extends Controller
 {
 
@@ -24,16 +26,16 @@ class ProductoController extends Controller
     }
 
     //REGISTRAR POST
-    public function store(Request $request)
+    public function store(CreateProductoRequest $request)
     {
         //VALIDACION
-        $request->validate([
+        /*$request->validate([
             'nombre'=> 'required',
             'marca'=> 'required',
             'precio'=> 'required',
             'fvencimiento'=> 'required',
             'stock'=> 'required'
-        ]);
+        ]); La validadcion ahora se hace en CreateProductoRequest*/
 
         /*
         $producto = new Producto();
