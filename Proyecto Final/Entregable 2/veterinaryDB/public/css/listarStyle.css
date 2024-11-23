@@ -1,0 +1,82 @@
+/* listarStyle.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    color: #2e7d32; /* Verde oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+table {
+    width: 80%; /* Ancho reducido para centrar */
+    margin: 0 auto; /* Centrado horizontal */
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #2e7d32; /* Verde oscuro */
+}
+
+td, th {
+    border: 1px solid #000000; /* Borde verde */
+    padding: 10px;
+    text-align: left;
+}
+
+
+th {
+    background-color: #2e7d32; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+/* Fondo verde solo para el primer tr (encabezado) */
+tr:first-child {
+    background-color: #2e7d32; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+tr:first-child:hover{
+    background-color: #2e7d32; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+tr:hover {
+    background-color: #c8e6c9; /* Verde más claro al pasar el cursor */
+}
+
+a {
+    text-decoration: none;
+    color: #303f23; /* Verde oscuro */
+    padding: 8px 12px; /* Espaciado ajustado */
+    border: 2px solid #2e7d32; /* Borde verde */
+    border-radius: 4px;
+    transition: background-color .3s, color .3s;
+    margin-right: 10px; /* Espaciado entre enlaces */
+    background-color: #b9d4ba;
+
+}
+
+a:hover {
+    background-color: #2e7d32; /* Fondo verde al pasar el cursor */
+    color: white; /* Texto blanco al pasar el cursor */
+}
+
+.link-container {
+    text-align: center; /* Centrando los enlaces */
+    margin-top: 20px;
+}
+
+.link-container a:last-child {
+    border: none; /* Sin borde para el enlace "Volver" */
+    background-color: transparent; /* Fondo transparente */
+}
